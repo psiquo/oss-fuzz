@@ -187,7 +187,7 @@ RUN cd $SRC && \
     rm -rf examples $SRC/oss-fuzz.tar.gz
 
 COPY compile compile_afl compile_dataflow compile_libfuzzer compile_honggfuzz \
-    compile_go_fuzzer precompile_honggfuzz precompile_afl srcmap \
+    compile_go_fuzzer precompile_honggfuzz precompile_afl debug_afl srcmap \
     write_labels.py /usr/local/bin/
 
 COPY detect_repo.py /opt/cifuzz/
