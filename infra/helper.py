@@ -685,6 +685,12 @@ def docker_run(run_args, print_output=True, architecture='x86_64'):
       'docker', 'run', '--rm', '--privileged', '--shm-size=2g', '--platform',
       platform
   ]
+  vars = []
+
+  for k in [x for x in os.environ.keys() if x.startswith("OSS_FUZZ")]:
+      vars.extend(["-e",f"{k}={os.environ.get(k)}"])
+
+  command.extend(vars)
   # Support environments with a TTY.
   if sys.stdin.isatty():
     command.append('-i')

@@ -121,7 +121,7 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc",
-    "watch": "tsc -watch -p ./",
+    "watch": "tsc -watch -p ",
     "pretest": "npm run compile",
     "lint": "gts lint",
     "clean": "gts clean",

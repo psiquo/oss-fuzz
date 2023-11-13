@@ -18,5 +18,5 @@ RUN apt-get update && apt-get install -y scons python3-distutils
 RUN git clone --depth 1 https://gitlab.com/gpsd/gpsd
 RUN git clone https://github.com/0x34d/oss-fuzz-bloat
 COPY build.sh $SRC/
-COPY fuzzer/ $SRC/gpsd/fuzzer/
+COPY fuzzer $SRC/gpsd/fuzzer/
 WORKDIR $SRC/gpsd/
